@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #313131; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addlanuage(name){
+        const li = document.createElement('li');
+        li.innerText = name;
+        document.querySelector('.language').appendChild(li);
+    }
+
+    function addlanuageoptimal(name){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(name));
+        document.querySelector('.language').appendChild(li);
+    }
+    addlanuage("java");
+    addlanuage("Ruby")
+
+    const secondlang = document.querySelector("li:nth-child(2)")
+    // secondlang.innerHTML = 'Shubham'
+    const newli = document.createElement('li');
+    newli.innerHTML = "Python"
+    secondlang.replaceWith(newli)
+
+    //remove
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+</script>
+</html>

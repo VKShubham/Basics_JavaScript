@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynconus</title>
+</head>
+<body>
+    <h1>Shubham Vanani</h1>
+    <button id="button">press stop to avoid name change in 2 sec</button>
+</body>
+<script>
+    // settig a timout function after the 2 sec it will print the hello
+   // setTimeout(() => {
+   //     console.log('Hello');
+  //  }, 2000);
+
+  const sitenamechange = setTimeout(() => {
+    document.querySelector('h1').innerHTML = 'Meet Vanani'
+  }, 2000);
+
+  // if i want to if i press stop button before 2 sec then it will not change name then we do something like this
+
+  document.getElementById('button').addEventListener('click',(event) => {
+    clearInterval(sitenamechange)
+  }, false)
+</script>
+</html>

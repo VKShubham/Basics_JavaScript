@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #313313; color: aliceblue;">
+    <h2>Girl Images</h2>
+    <ul class="images">
+        <li><img src="https://images.pexels.com/photos/18156147/pexels-photo-18156147/free-photo-of-woman-wearing-wedding-dress-sitting-on-concrete-block.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Girl" id="firstphoto" width="150px"></li>
+        <li><img src="https://images.pexels.com/photos/20762302/pexels-photo-20762302/free-photo-of-woman-in-sequin-dress-stanidng-on-sea-shore.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Second Girl" id="secondphoto" width="150px"></li>
+        <li><img src="https://images.pexels.com/photos/21371175/pexels-photo-21371175/free-photo-of-woman-in-black-dress-at-temple.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Thired Girl" id="thiredphoto" width="150px"></li>
+        <li><img src="https://images.pexels.com/photos/20738270/pexels-photo-20738270/free-photo-of-for-honesty-pictures.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="four girl" id="fourphoto" width="150px"></li>
+        <li><a href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+
+    // if we write false in event propgation then it called like bubling from inside to outside
+    // in this case first photo clicked will be there and then images clicked
+    // document.getElementById('firstphoto').addEventListener('click',(event) =>{
+    //     console.log("photo clicked");
+    // }, false)
+    // document.querySelector('.images').addEventListener('click',(event) =>{
+    //     console.log("images clicked");
+    //     //we also can do like
+        // event.stopPropagation()
+    // }, false)
+
+    //but if we do true then secniro will be revrese
+    // document.getElementById('firstphoto').addEventListener('click',(event) =>{
+    //     console.log("photo clicked");
+    //     event.stopPropagation()
+    // }, true)
+
+    // document.querySelector('.images').addEventListener('click',(event) =>{  
+    //     console.log("images clicked");
+    //     event.stopPropagation()
+    // }, true)
+
+    // document.getElementById('google').addEventListener('click', (event) => {
+    //     event.preventDefault();
+    //     event.stopPropagation() 
+    //     console.log('Google Clicked');
+    // }, false)
+
+    document.querySelector('.images').addEventListener('click',(event) =>{  
+        if(event.target.tagName == 'IMG'){
+            event.target.parentNode.remove();
+        }
+    })
+
+</script>
+</html>
